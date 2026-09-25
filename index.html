@@ -1,0 +1,1499 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>COPIFY</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Quicksand:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+    <style>
+      .bg-color {
+        background-color: #eaf3ffcc;
+      }
+      #main-content {
+        background-color: #eaf3ff;
+      }
+      .button-pesan {
+        background-color: #1f5fb1;
+        color: white;
+        border: none;
+        border-radius: 10px;
+        padding: 8px 16px;
+        list-style: none;
+        margin-right: 20px;
+        font-weight: bold;
+        text-decoration: none;
+      }
+      .button-layanan {
+        background-color: #1f5fb1;
+        color: white;
+        padding: 10px;
+        border-radius: 10px;
+        text-decoration: none;
+      }
+      .button-kisah {
+        background-color: white;
+        border-radius: 10px;
+        color: black;
+        padding: 10px;
+        margin-left: 5px;
+        text-decoration: none;
+      }
+      .button-kisah:hover {
+        background-color: #1f5fb1;
+        color: white;
+      }
+      .text-copify {
+        color: #1f5fb1;
+      }
+      .button-keranjang {
+        background-color: #f8f8f9;
+        border-radius: 7px;
+        padding: 4px 10px;
+        color: rgb(11, 11, 11);
+        list-style: none;
+        margin-right: 7px;
+      }
+      .navbar {
+        padding-top: 8px;
+        padding-bottom: 8px;
+        border-bottom: 3px solid #1f5fb1;
+      }
+      .button-keranjang:hover {
+        background-color: #1f5fb1;
+        color: white;
+      }
+      .nav-item > .nav-link:hover {
+        border-bottom: 2px solid #1f5fb1;
+        color: #1f5fb1 !important;
+        transition: all ease-in-out;
+      }
+      body {
+        background-color: #fff2f5;
+        color: #2c1a1d;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      .font-display {
+        font-family: "Quicksand", sans-serif;
+        font-weight: 700;
+        color: #2c1a1d;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      .nav-item > a {
+        font-size: 14px;
+      }
+
+      .text-content h1 {
+        font-size: 3rem;
+        line-height: 1.12;
+      }
+
+      @media (max-width: 768px) {
+        .text-content h1 {
+          font-size: 2rem;
+        }
+        .tentang-card {
+          border-radius: 200px 200px 0px 0px !important;
+        }
+        .maskot-badge-circle {
+          border-radius: 200px 200px 0px 0px !important;
+        }
+      }
+
+      .hero-section {
+        position: relative;
+        overflow: hidden;
+        padding: 4rem 0 5rem;
+      }
+
+      /* Maskot animasi */
+      @keyframes floatMascot {
+        0%,
+        100% {
+          transform: translateY(0px) rotate(0deg);
+        }
+
+        50% {
+          transform: translateY(-10px) rotate(1.5deg);
+        }
+      }
+
+      .animate-mascot {
+        animation: floatMascot 4.5s ease-in-out infinite;
+      }
+
+      .hero-image-wrapper {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .teks {
+        background-color: #1f5fb1;
+        color: white;
+        padding: 4px 12px;
+        box-shadow: 2px 2px 10px black;
+        display: inline-block;
+        transform: rotate(-3deg);
+      }
+      .teks2 {
+        background-color: #1f5fb1;
+        color: white;
+        padding: 4px 12px;
+        box-shadow: 2px 2px 10px black;
+        display: inline-block;
+        transform: rotate(-3deg);
+        margin-bottom: 5px;
+      }
+      .mb-3 {
+        margin-bottom: 30px;
+      }
+
+      .text-content p {
+        margin-bottom: 35px;
+      }
+
+      .hero-pod {
+        position: absolute;
+        inset: 1rem;
+        background: linear-gradient(
+          180deg,
+          #eaf3ff 0%,
+          #1f5fb1 20%,
+          #eaf3ff 100%
+        );
+        border-radius: 44px;
+        box-shadow: 0 14px 28px -6px rgba(216, 67, 96, 0.12);
+        border: 4px solid #fff;
+        transform: rotate(2deg);
+      }
+      .logo-text {
+        color: #1f5fb1;
+        font-size: 24px;
+        font-weight: bold;
+        line-height: 1;
+      }
+
+      .logo-tagline {
+        color: #555;
+        font-size: 10px;
+      }
+      /* TRUST-BAR */
+      .trust-bar {
+        padding: 2rem 0;
+        background-color: #174f91;
+        border-top: 1px solid #eaf3ff;
+        border-bottom: 1px solid #eaf3ff;
+      }
+      .trust-icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 12px;
+        background-color: white;
+        color: #1557a6;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+      .deskripsi {
+        color: #eaf2ff;
+        font-weight: lighter;
+      }
+      .trust-item {
+        position: relative;
+      }
+      .trust-item:not(:last-child)::after {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 10%;
+        height: 80%;
+        width: 1px;
+        background-color: rgba(255, 255, 255, 0.2);
+      }
+      .nav-item > .nav-link.active {
+        color: #1f5fb1 !important;
+        border-bottom: 2px solid #1f5fb1;
+      }
+      .kategori-card1 {
+        background-color: #1557a6;
+        padding: 15px;
+        transform: rotate(-3deg);
+        box-shadow: 2px 2px 10px black;
+      }
+      .kategori-card2 {
+        background-color: #1557a6;
+        padding: 15px;
+        transform: rotate(3deg);
+        box-shadow: 2px 2px 10px black;
+      }
+      .kategori-card3 {
+        background-color: #1557a6;
+        padding: 15px;
+        transform: rotate(-3deg);
+        box-shadow: 2px 2px 10px black;
+      }
+      .kategori-card4 {
+        background-color: #1557a6;
+        padding: 15px;
+        transform: rotate(3deg);
+        box-shadow: 2px 2px 10px black;
+      }
+      .kategori-card1,
+      .kategori-card2,
+      .kategori-card3,
+      .kategori-card4 {
+        margin-left: 10px;
+        margin-right: 10px;
+        transition: all 0.3s ease;
+      }
+      .h3-kategori {
+        color: white;
+        font-weight: bold;
+        text-align: center;
+      }
+      .p-kategori {
+        color: white;
+        text-align: center;
+        font-weight: lighter;
+      }
+      .span-judul {
+        text-align: center;
+        color: #1557a6;
+        display: block;
+      }
+      .kategori-icon {
+        width: 64px;
+        height: 64px;
+        margin: 0 auto 1rem;
+        border-radius: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.75rem;
+        background-color: #d84360;
+        color: #ffffff;
+        transition: transform 0.3s ease;
+      }
+      .kategori-card1,
+      .kategori-card2,
+      .kategori-card3,
+      .kategori-card4 {
+        margin-left: 10px;
+        margin-right: 10px;
+        transition: all 0.3s ease;
+        cursor: pointer;
+      }
+
+      /* Animasi kartu saat disentuh mouse */
+      .kategori-card1:hover,
+      .kategori-card2:hover,
+      .kategori-card3:hover,
+      .kategori-card4:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 14px 28px -6px rgba(216, 67, 96, 0.12);
+      }
+
+      /* Animasi icon saat kartu disentuh */
+      .kategori-card1:hover .kategori-icon,
+      .kategori-card2:hover .kategori-icon,
+      .kategori-card3:hover .kategori-icon,
+      .kategori-card4:hover .kategori-icon {
+        transform: scale(1.1);
+      }
+
+      .kategori-icon.owen {
+        background-color: #e85d75;
+        color: #ffffff;
+      }
+
+      .kategori-icon.bilu {
+        background-color: #f28c28;
+        color: #ffffff;
+      }
+
+      .kategori-icon.ijo {
+        background-color: #4b8fd8;
+        color: #ffffff;
+      }
+
+      .kategori-icon.ungu {
+        background-color: #6c7fd8;
+        color: #ffffff;
+      }
+      .kategori-subtitle {
+        color: #f8f8f9;
+        background-color: #1557a6;
+        box-shadow: 2px 2px 10px black;
+        margin-top: 25px;
+        text-align: center;
+        height: 40px;
+        width: fit-content;
+        padding: 8px;
+        margin-top: 50px;
+        font-family: fantasy;
+        cursor: pointer;
+      }
+      .kosong {
+        color: white;
+        margin-right: 2px;
+        background-color: #1557a6;
+      }
+
+      .bestseller-section {
+        background-color: #1557a6;
+        padding: 2rem 0;
+      }
+      .bestseller-section h2 {
+        color: #eeeeef;
+      }
+
+      .bestseller-section p.label-kanan {
+        color: #dcebfa !important;
+      }
+
+      .product-card {
+        background-color: white;
+        border: 1px solid white;
+        border-radius: 30px;
+        padding: 20px;
+        box-shadow: 1px 2px 10px black;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        cursor: pointer;
+        height: 100%;
+        transition: all 0.3s ease;
+      }
+
+      .hargabarang {
+        color: #1f5fb1;
+      }
+      .product-card:hover {
+        box-shadow: 2px 1px -3px rgb(215, 17, 17);
+      }
+      .product-img-wrap {
+        position: relative;
+        border-radius: 20xpx;
+      }
+
+      .best-seller-label {
+        display: inline-block;
+        padding: 8px 10px;
+        background-color: #ffffff;
+        color: #1f5fb1;
+        font-size: 14px;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        transform: rotate(-3deg);
+        box-shadow: 2px 3px 20px white;
+      }
+
+      .product-img-wrap {
+        position: relative;
+        height: 220px;
+        background-color: #f1f7ff;
+        border: 1px solid #1557a6;
+        border-radius: 22px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+      }
+
+      .product-img-wrap.choco {
+        background-color: rgba(255, 238, 200);
+      }
+
+      .product-tag {
+        position: absolute;
+        top: 12px;
+        left: 12px;
+        background-color: rgba(255, 255, 255, 0.95);
+        padding: 0.25rem 0.75rem;
+        border-radius: 999px;
+        font-size: 11px;
+        font-weight: 700;
+        color: #d84360;
+        border: 1px solid #f2ced6;
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+      }
+
+      .product-tag.green {
+        color: #5b8a61;
+      }
+
+      .product-tag .dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background-color: #d84360;
+      }
+
+      .product-tag.green .dot {
+        background-color: #5b8a61;
+      }
+
+      .product-icon {
+        width: 200px;
+        height: 200px;
+        transition: transform 0.3s ease;
+      }
+
+      .product-card:hover .product-icon {
+        transform: scale(1.05);
+      }
+
+      .btn-pesan1 {
+        background-color: #1557a6;
+        color: white;
+      }
+
+      .product-footer {
+        margin-top: 1.5rem;
+        padding-top: 1rem;
+        border-top: 1px solid rgba(242, 206, 214, 0.6);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .product-tag .dot {
+        background-color: #1f5fb1;
+      }
+      .product-tag .dot {
+        animation: dotPulse 1.5s ease-in-out infinite;
+      }
+
+      @keyframes dotPulse {
+        0%,
+        100% {
+          transform: scale(1);
+          opacity: 1;
+        }
+        50% {
+          transform: scale(1.4);
+          opacity: 0.6;
+        }
+      }
+      /* ==================== TENTANG ==================== */
+      .tentang-section {
+        padding: 4rem 0;
+      }
+
+      .tentang-card {
+        background-color: #1557a6;
+        border: 1px solid #f2ced6;
+        border-radius: 36px;
+        padding: 3rem 2rem;
+        box-shadow: 0 14px 28px -6px rgba(216, 67, 96, 0.12);
+      }
+
+      .mascot-badge-circle {
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem;
+      }
+      .h2-tentang {
+        color: white;
+        font-weight: bold;
+      }
+      .p-tentang {
+        color: white;
+        font-weight: lighter;
+      }
+      .h3-tentang {
+        color: white;
+        font-weight: bolder;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+      .p-gambar {
+        color: white;
+        font-weight: lighter;
+      }
+      .span-tentang {
+        color: white;
+      }
+
+      .bulat-tentang {
+        background-color: #1557a6;
+      }
+      .maskot-badge-circle {
+        margin: 0 auto;
+        padding: 12px;
+        border: 4px solid #ffffff;
+        border-radius: 30px;
+        background: #eaf3ff;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+      }
+
+      .maskot-badge-circle img {
+        width: 100%;
+        border-radius: 22px;
+        display: block;
+        animation: maskotFloat 3s ease-in-out infinite;
+      }
+
+      /* GERAK NAIK TURUN */
+      @keyframes maskotFloat {
+        0% {
+          transform: translateY(0);
+        }
+
+        50% {
+          transform: translateY(-10px);
+        }
+
+        100% {
+          transform: translateY(0);
+        }
+      }
+      /* ==================== TESTIMONI ==================== */
+      .testimoni-section {
+        padding: 4rem 0;
+        background-color: #1557a6;
+        border-top: 1px solid #f2ced6;
+        border-bottom: 1px solid #f2ced6;
+      }
+
+      .testi-card {
+        background-color: #fff5f5;
+        border: 1px solid #f2ced6;
+        border-radius: 24px;
+        padding: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+      }
+
+      .testi-avatar {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Quicksand", sans-serif;
+        font-weight: 700;
+        font-size: 12px;
+        background-color: #eaf3ff;
+        color: #1f5fb1;
+      }
+      .testi-avatar img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 100px;
+      }
+
+      .testi-avatar.cream {
+        background-color: #fff8f0;
+        color: #2c1a1d;
+      }
+      .span-testimoni {
+        color: #ffd43b;
+        text-shadow:
+          0 0 5px rgba(255, 212, 59, 0.5),
+          0 0 10px rgba(255, 212, 59, 0.4);
+        animation: kataMerekaGlow 2s ease-in-out infinite;
+      }
+
+      @keyframes kataMerekaGlow {
+        0%,
+        100% {
+          text-shadow:
+            0 0 5px rgba(255, 212, 59, 0.4),
+            0 0 10px rgba(255, 212, 59, 0.3);
+        }
+
+        50% {
+          text-shadow:
+            0 0 8px rgba(255, 212, 59, 0.8),
+            0 0 18px rgba(255, 212, 59, 0.7),
+            0 0 28px rgba(255, 255, 255, 0.3);
+        }
+      }
+      .h2-ulasan {
+        color: white;
+      }
+
+      .galeri-section {
+        padding: 4.5rem 0;
+        background: #fff2f5;
+      }
+
+      .galeri-heading {
+        margin-bottom: 2rem;
+      }
+
+      .galeri-heading span {
+        display: inline-block;
+        color: #1f5fb1;
+        font-weight: 700;
+        font-size: 1rem;
+        margin-bottom: 8px;
+      }
+
+      .galeri-heading h2 {
+        margin: 0;
+        color: #2c1a1d;
+        font-size: 2rem;
+        font-weight: 800;
+      }
+
+      .galeri-heading p {
+        margin-top: 8px;
+        color: #6b7280;
+      }
+
+      /* GRID FOTO */
+      .galeri-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 18px;
+        width: 100%;
+      }
+
+      .instagram-card {
+        display: block;
+        overflow: hidden;
+        aspect-ratio: 1 / 1;
+        border-radius: 22px;
+        background: #eaf3ff;
+        box-shadow: 0 10px 25px rgba(31, 95, 177, 0.12);
+      }
+
+      .instagram-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.4s ease;
+      }
+
+      .instagram-card:hover img {
+        transform: scale(1.08);
+      }
+
+      /* BUTTON */
+      .btn-instagram {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 11px 20px;
+        border-radius: 12px;
+        background: #1f5fb1;
+        color: white;
+        text-decoration: none;
+        font-weight: 600;
+        transition: 0.3s ease;
+      }
+
+      .btn-instagram:hover {
+        background: #174f91;
+        color: white;
+        transform: translateY(-2px);
+      }
+
+    </style>
+  </head>
+  <body>
+    <!-- NAVBAR TERCINTA -->
+    <nav class="navbar navbar-expand-lg bg-color sticky-top">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="#">
+          <img src="gambar/logomaskot.png" alt="Logo COPIFY" width="70px" />
+
+          <div class="ms-2">
+            <div class="teks2">COPIFY</div>
+            <div class="logo-tagline">Cetak. Salin. Beres.</div>
+          </div>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Kategori</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">Jasa</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">Tentang Copify</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">Kata Mereka</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav gap-3">
+            <li class="nav-item">
+              <a
+                href=""
+                class="button-keranjang position-relative rounded-pill"
+              >
+                <i class="bi bi-basket2-fill"></i>
+                <span
+                  class="position-absolute top-0 start-100 translate-middle badge rounded-pill kosong"
+                >
+                  0
+                  <span class="visually-hidden">Keranjang Kosong</span>
+                </span>
+              </a>
+              <a href="#" class="button-pesan">Pesan Sekarang</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- MAIN CONTENT -->
+    <main id="main-content">
+      <!-- hero section -->
+      <section class="hero-section" id="home">
+        <div class="container position-relative" style="z-index: 1">
+          <div class="row align-items-center">
+            <div class="col-lg-7 text-content text-center text-lg-start">
+              <h1 class="mb-3">
+                Setiap Lembar, Jadi Lebih Mudah dengan
+                <span class="teks">COPIFY!!</span>
+              </h1>
+
+              <p
+                class="text-secondary mb-4 mx-auto mx-lg-0"
+                style="max-width: 36rem; color: #73575c !important"
+              >
+                Mulai dari fotocopy, print dokumen, scan, hingga kebutuhan cetak
+                lainnya. Cepat, rapi, dan nggak ribet—semua beres di COPIFY!
+              </p>
+
+              <div
+                class="action d-flex flex-column flex-sm-row gap-3 justify-content-center justify-content-lg-start"
+              >
+                <a
+                  href="#"
+                  class="btn button-layanan fw-bold px-4 py-3 rounded-4 d-inline-flex align-items-center justify-content-center gap-2"
+                  >Lihat Layanan-></a
+                >
+                <a
+                  href="#"
+                  class="btn button-kisah fw-bold px-4 py-3 rounded-4 border"
+                  >Kisah Maskot COPIFY!</a
+                >
+              </div>
+            </div>
+
+            <div class="col-lg-5">
+              <div class="hero-image-wrapper">
+                <div class="hero-pod"></div>
+                <img
+                  src="gambar/maskot.png"
+                  alt="Maskot SIgma"
+                  class="img-fluid position-relative animate-mascot"
+                  style="z-index: 1; max-width: 380px"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TRUST BAR -->
+      <section class="trust-bar">
+        <div class="container">
+          <div class="row g-4 text-center trust-item">
+            <div class="col-6 col-md-3">
+              <div
+                class="d-flex align-items-center justify-content-center gap-3"
+              >
+                <div class="trust-icon">
+                  <i class="bi bi-printer"></i>
+                </div>
+                <div class="text-start">
+                  <h4 class="h6 mb-0 text-white fw-bold jasa">
+                    Fotocopy Berkualitas
+                  </h4>
+                  <p class="small deskripsi mb-0">
+                    Hasil dokumen jelas dan rapi dan berkualitas
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-6 col-md-3">
+              <div
+                class="d-flex align-items-center justify-content-center gap-3"
+              >
+                <div class="trust-icon">
+                  <i class="bi bi-file-earmark-text"></i>
+                </div>
+                <div class="text-start">
+                  <h4 class="h6 mb-0 text-white fw-bold jasa">
+                    Print Beragam Dokumen
+                  </h4>
+                  <p class="small deskripsi mb-0">
+                    Melayani kebutuhan print untuk berbagai dokumen
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-6 col-md-3">
+              <div
+                class="d-flex align-items-center justify-content-center gap-3"
+              >
+                <div class="trust-icon">
+                  <i class="bi bi-file-earmark-arrow-down"></i>
+                </div>
+                <div class="text-start">
+                  <h4 class="h6 mb-0 text-white fw-bold jasa">
+                    Scan Dokumen Praktis
+                  </h4>
+                  <p class="small deskripsi mb-0">
+                    Scan dokumen untuk kebutuhan sekolah dan kerja
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-6 col-md-3">
+              <div
+                class="d-flex align-items-center justify-content-center gap-3"
+              >
+                <div class="trust-icon">
+                  <i class="bi bi-people"></i>
+                </div>
+                <div class="text-start">
+                  <h4 class="h6 mb-0 text-white fw-bold jasa">
+                    Pelayanan Untuk Semua
+                  </h4>
+                  <p class="small deskripsi mb-0">
+                    Melayani siswa, pekerja, dan masyarakat umum
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- KATEGORI CONTENT -->
+      <section id="kategori" class="py-5">
+        <div class="container">
+          <span
+            class="span-judul fw-bold text-uppercase small text-center"
+            style="letter-spacing: 0.05em"
+            >PILIH KEBUTUHANMU</span
+          >
+          <h2 class="mt-1 text-center mb-4">Layanan Fotocopy & Cetak</h2>
+
+          <div class="row g-4">
+            <div class="col-6 col-md-3">
+              <div class="kategori-card1">
+                <div class="kategori-icon owen">
+                  <i class="bi bi-copy"></i>
+                </div>
+                <h3 class="h6 mb-1 h3-kategori">Fotocopy Dokumen</h3>
+                <p class="small p-kategori mb-0">
+                  Solusi fotocopy untuk berbagai kebutuhan dokumen
+                </p>
+              </div>
+            </div>
+            <div class="col-6 col-md-3">
+              <div class="kategori-card2">
+                <div class="kategori-icon bilu">
+                  <i class="bi bi-printer"></i>
+                </div>
+                <h3 class="h6 mb-1 h3-kategori">Print Dokumen</h3>
+                <p class="small p-kategori mb-0">
+                  Cetak dokumen dengan hasil jelas dan rapi Dan Berkualitas
+                </p>
+              </div>
+            </div>
+            <div class="col-6 col-md-3">
+              <div class="kategori-card3">
+                <div class="kategori-icon ijo">
+                  <i class="bi bi-file-earmark-arrow-down"></i>
+                </div>
+                <h3 class="h6 mb-1 h3-kategori">Scan Dokumen</h3>
+                <p class="small p-kategori mb-0">
+                  Layanan scan dokumen untuk kebutuhan digital
+                </p>
+              </div>
+            </div>
+            <div class="col-6 col-md-3">
+              <div class="kategori-card4">
+                <div class="kategori-icon ungu">
+                  <i class="bi bi-pencil-square"></i>
+                </div>
+                <h3 class="h6 mb-1 h3-kategori">Alat Tulis & Kebutuhan</h3>
+                <p class="small p-kategori mb-0">
+                  Menyediakan buku, pulpen, pensil, dan kebutuhan lainnya
+                </p>
+              </div>
+            </div>
+          </div>
+          <p class="kategori-subtitle mx-auto">
+            Butuh layanan lainnya? COPIFY siap membantu kebutuhan cetakmu.
+          </p>
+        </div>
+      </section>
+
+      <!-- BEST SELLER -->
+      <section id="bestseller" class="bestseller-section">
+        <div class="container">
+          <div
+            class="d-flex flex-column flex-md-row align-item-md-end justify-content-between mb-5"
+          >
+            <div>
+              <span
+                class="best-seller-label fw-bold text-uppercase small"
+                style="letter-spacing: 0.05em"
+                >BEST SELLER</span
+              >
+              <h2 class="mt-1">Pilihan Favorit Minggu Ini</h2>
+            </div>
+            <p
+              class="label-kanan small mb-0 mt-2 mt-md-0"
+              style="max-width: 24rem"
+            >
+              Berbagai layanan dan produk yang siap memenuhi kebutuhanmu.
+            </p>
+          </div>
+
+          <div class="bestseller row g-4">
+            <div class="col-md-6 col-lg-4">
+              <article class="product-card">
+                <div>
+                  <div class="product-img-wrap">
+                    <div class="product-tag">
+                      <span class="dot"></span>
+                      <span>Paling Dicari</span>
+                    </div>
+                    <img
+                      src="gambar/bestseller-fotocopy.png"
+                      alt=""
+                      width="100%"
+                    />
+                  </div>
+                  <div class="mt-3">
+                    <div
+                      class="d-flex align-items-center justify-content-between"
+                    >
+                      <span
+                        class="small fw-semibold text-secondary text-uppercase"
+                        style="letter-spacing: 0.05em"
+                        >Fotocopy</span
+                      >
+                      <span class="small fw-bold text-warning"
+                        ><i class="bi bi-star-fill">4.9 (184)</i></span
+                      >
+                    </div>
+                    <h3 class="h5 mt-2 mb-1">Fotocopy Dokumen</h3>
+                    <p class="small text-secondary mb-0">
+                      Salin dokumen dengan hasil jelas dan rapi untuk berbagai
+                      kebutuhan.
+                    </p>
+                  </div>
+                </div>
+                <div class="product-footer">
+                  <div>
+                    <span
+                      class="d-block"
+                      style="font-size: 11px; color: #1557a6"
+                      >Mulai Dari</span
+                    >
+                    <span class="font-display fw-bold fs-5 hargabarang"
+                      >Rp.300/lembar</span
+                    >
+                  </div>
+                  <button
+                    class="btn btn-pesan1 btn-sm fw-bold rounded-3 d-inline-flex align-items-center gap-2"
+                    onclick="handleAddToCart('Stawberry Velvet Bento', 88000)"
+                  >
+                    <i class="bi bi-plus-lg"></i>Pesan
+                  </button>
+                </div>
+              </article>
+            </div>
+            <div class="col-md-6 col-lg-4">
+              <article class="product-card">
+                <div>
+                  <div class="product-img-wrap">
+                    <div class="product-tag">
+                      <span class="dot"></span>
+                      <span>Favorit</span>
+                    </div>
+                    <img
+                      src="gambar/bestseller-print.png"
+                      alt=""
+                      width="100%"
+                    />
+                  </div>
+                  <div class="mt-3">
+                    <div
+                      class="d-flex align-items-center justify-content-between"
+                    >
+                      <span
+                        class="small fw-semibold text-secondary text-uppercase"
+                        style="letter-spacing: 0.05em"
+                        >Print</span
+                      >
+                      <span class="small fw-bold text-warning"
+                        ><i class="bi bi-star-fill">4.9 (184)</i></span
+                      >
+                    </div>
+                    <h3 class="h5 mt-2 mb-1">Print Dokumen</h3>
+                    <p class="small text-secondary mb-0">
+                      Cetak tugas, laporan, dan dokumen penting dengan hasil
+                      bersih dan nyaman dibaca.
+                    </p>
+                  </div>
+                </div>
+                <div class="product-footer">
+                  <div>
+                    <span
+                      class="d-block"
+                      style="font-size: 11px; color: #1557a6"
+                      >Mulai Dari</span
+                    >
+                    <span class="font-display fw-bold fs-5 hargabarang"
+                      >Rp3.000/lembar</span
+                    >
+                  </div>
+                  <button
+                    class="btn btn-pesan1 btn-sm fw-bold rounded-3 d-inline-flex align-items-center gap-2"
+                    onclick="handleAddToCart('Stawberry Velvet Bento', 88000)"
+                  >
+                    <i class="bi bi-plus-lg"></i>Pesan
+                  </button>
+                </div>
+              </article>
+            </div>
+            <div class="col-md-6 col-lg-4">
+              <article class="product-card">
+                <div>
+                  <div class="product-img-wrap">
+                    <div class="product-tag">
+                      <span class="dot"></span>
+                      <span>Populer</span>
+                    </div>
+                    <img src="gambar/bestseller-alat.png" alt="" width="100%" />
+                  </div>
+                  <div class="mt-3">
+                    <div
+                      class="d-flex align-items-center justify-content-between"
+                    >
+                      <span
+                        class="small fw-semibold text-secondary text-uppercase"
+                        style="letter-spacing: 0.05em"
+                        >Kebutuhan Sekolah</span
+                      >
+                      <span class="small fw-bold text-warning"
+                        ><i class="bi bi-star-fill">4.9 (184)</i></span
+                      >
+                    </div>
+                    <h3 class="h5 mt-2 mb-1">Alat Tulis</h3>
+                    <p class="small text-secondary mb-0">
+                      Lengkapi kebutuhan sekolah dan kerja dengan buku, pulpen,
+                      pensil, dan lainnya.
+                    </p>
+                  </div>
+                </div>
+                <div class="product-footer">
+                  <div>
+                    <span
+                      class="d-block"
+                      style="font-size: 11px; color: #1557a6"
+                      >Mulai Dari</span
+                    >
+                    <span class="font-display fw-bold fs-5 hargabarang"
+                      >Rp.2.000</span
+                    >
+                  </div>
+                  <button
+                    class="btn btn-pesan1 btn-sm fw-bold rounded-3 d-inline-flex align-items-center gap-2"
+                    onclick="handleAddToCart('Stawberry Velvet Bento', 88000)"
+                  >
+                    <i class="bi bi-plus-lg"></i>Pesan
+                  </button>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TENTANG -->
+      <section id="tentang" class="tentang-section">
+        <div class="container">
+          <div class="tentang-card">
+            <div class="row g-5 align-items-center">
+              <div class="col-lg-5 text-center">
+                <div class="maskot-badge-circle">
+                  <img
+                    src="gambar/tentangcopify.png"
+                    alt=""
+                    class="img-fluid"
+                  />
+                </div>
+                <h3 class="h5 mt-4 h3-tentang">MEET COPIFY</h3>
+                <p class="small mb-0 p-gambar">Your Print Buddy</p>
+              </div>
+              <div class="col-lg-7">
+                <span
+                  class="span-tentang fw-bold text-uppercase small"
+                  style="letter-spacing: 0.05em"
+                  >Tentang Copify</span
+                >
+                <h2 class="mt-2 h2-tentang">
+                  Solusi Praktis untuk Kebutuhan Cetakmu
+                </h2>
+                <p class="p-tentang">
+                  COPIFY adalah usaha fotokopi dan percetakan yang hadir untuk
+                  membantu berbagai kebutuhan dokumen dan perlengkapan
+                  sehari-hari. Mulai dari fotokopi, print, scan dokumen, hingga
+                  alat tulis seperti buku, pulpen, dan pensil, COPIFY
+                  menyediakan pilihan yang praktis untuk siswa, pekerja, dan
+                  masyarakat umum.
+                </p>
+                <div class="row g-3 pt-2">
+                  <div class="col-sm-6">
+                    <div
+                      class="bg-white rounded-3 border p-3 small fw-semibold d-flex align-items-center gap-2"
+                      style="border-color: #1557a6 !important"
+                    >
+                      <span
+                        class="d-inline-block rounded-circle bulat-tentang"
+                        style="width: 8px; height: 8px"
+                      ></span>
+                      Fotokopi, Print, dan Scan
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div
+                      class="bg-white rounded-3 border p-3 small fw-semibold d-flex align-items-center gap-2"
+                      style="border-color: #1557a6 !important"
+                    >
+                      <span
+                        class="d-inline-block rounded-circle bulat-tentang"
+                        style="width: 8px; height: 8px"
+                      ></span>
+                      Untuk Siswa dan Pekerja
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div
+                      class="bg-white rounded-3 border p-3 small fw-semibold d-flex align-items-center gap-2"
+                      style="border-color: #1557a6 !important"
+                    >
+                      <span
+                        class="d-inline-block rounded-circle bulat-tentang"
+                        style="width: 8px; height: 8px"
+                      ></span>
+                      Buku dan Alat Tulis
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div
+                      class="bg-white rounded-3 border p-3 small fw-semibold d-flex align-items-center gap-2"
+                      style="border-color: #1557a6 !important"
+                    >
+                      <span
+                        class="d-inline-block rounded-circle bulat-tentang"
+                        style="width: 8px; height: 8px"
+                      ></span>
+                      Praktis & Mudah Diakses
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- KATA MEREKA -->
+      <section id="testimoni" class="testimoni-section">
+        <div class="container">
+          <div class="text-center mx-auto mb-5" style="max-width: 36rem">
+            <span
+              class="span-testimoni fw-bold text-uppercase small"
+              style="letter-spacing: 0.05em"
+              >Kata Mereka</span
+            >
+            <h2 class="mt-1 h2-ulasan">Ulasan Pelanggan Setia</h2>
+          </div>
+
+          <div
+            class="carousel slide"
+            id="carouselExampleSlideOnly"
+            data-bs-ride="carousel"
+            data-bs-interval="3000"
+          >
+            <div class="carousel-inner">
+              <!-- slide 1 -->
+              <div
+                class="carousel-item active"
+                style="color: black !important; border: none !important"
+              >
+                <div class="row g-4">
+                  <div class="col-md-4">
+                    <div class="testi-card">
+                      <div>
+                        <div class="text-warning mb-2">
+                          <i class="bi bi-star-fill"></i>
+                          <i class="bi bi-star-fill"></i>
+                          <i class="bi bi-star-fill"></i>
+                          <i class="bi bi-star-fill"></i>
+                          <i class="bi bi-star-fill"></i>
+                        </div>
+                        <p class="small mb-0">
+                          “Cepat banget, hasil print-nya juga jelas. Cocok kalau
+                          lagi buru-buru ngerjain tugas.”
+                        </p>
+                      </div>
+                      <div
+                        class="d-flex align-items-center gap-3 mt-4 pt-4 border-top"
+                      >
+                        <div class="testi-avatar">
+                          <img src="gambar/mbakbulan.jpg" alt="Sarjui Pausan" />
+                        </div>
+                        <div>
+                          <h4 class="h6 mb-0">Saruji Pausan</h4>
+                          <span class="small text-secondary">Bangladesh</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-4">
+                    <div class="testi-card">
+                      <div>
+                        <div class="text-warning mb-2">
+                          <i class="bi bi-star-fill"></i>
+                          <i class="bi bi-star-fill"></i>
+                          <i class="bi bi-star-fill"></i>
+                          <i class="bi bi-star-fill"></i>
+                          <i class="bi bi-star-fill"></i>
+                        </div>
+                        <p class="small mb-0">
+                          “Pelayanannya ramah dan kebutuhan cetak jadi lebih
+                          praktis. Pernah beli alat tulis juga sekalian.”
+                        </p>
+                      </div>
+                      <div
+                        class="d-flex align-items-center gap-3 mt-4 pt-4 border-top"
+                      >
+                        <div class="testi-avatar">
+                          <img src="gambar/mbakiu.jpg" alt="Sarjui Pausan" />
+                        </div>
+                        <div>
+                          <h4 class="h6 mb-0">Eka Purwanti</h4>
+                          <span class="small text-secondary">Kamboja</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-4">
+                    <div class="testi-card">
+                      <div>
+                        <div class="text-warning mb-2">
+                          <i class="bi bi-star-fill"></i>
+                          <i class="bi bi-star-fill"></i>
+                          <i class="bi bi-star-fill"></i>
+                          <i class="bi bi-star-fill"></i>
+                          <i class="bi bi-star-fill"></i>
+                        </div>
+                        <p class="small mb-0">
+                          “Hasil fotokopinya jelas dan prosesnya cepat. Jadi
+                          nggak perlu nunggu lama.”
+                        </p>
+                      </div>
+                      <div
+                        class="d-flex align-items-center gap-3 mt-4 pt-4 border-top"
+                      >
+                        <div class="testi-avatar">
+                          <img src="gambar/bangwoo.jpg" alt="Sarjui Pausan" />
+                        </div>
+                        <div>
+                          <h4 class="h6 mb-0">Abdul Razak</h4>
+                          <span class="small text-secondary">Timor Leste</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- slide 2 -->
+              <div class="carousel-item">
+                <div class="row g-4">
+                  <div class="col-md-4">
+                    <div class="testi-card">
+                      <div>
+                        <div class="text-warning mb-2">
+                          <i class="bi bi-star-fill"></i>
+                          <i class="bi bi-star-fill"></i>
+                          <i class="bi bi-star-fill"></i>
+                          <i class="bi bi-star-fill"></i>
+                          <i class="bi bi-star-fill"></i>
+                        </div>
+                        <p class="small mb-0">
+                          “Kalau lagi ada tugas mendadak, langsung ke COPIFY.
+                          Prosesnya cepat dan hasil print-nya jelas banget.”
+                        </p>
+                      </div>
+                      <div
+                        class="d-flex align-items-center gap-3 mt-4 pt-4 border-top"
+                      >
+                        <div class="testi-avatar">
+                          <img src="gambar/mbaksalma.jpg" alt="Sarjui Pausan" />
+                        </div>
+                        <div>
+                          <h4 class="h6 mb-0">Salma Salsabil</h4>
+                          <span class="small text-secondary">Jepang</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-4">
+                    <div class="testi-card">
+                      <div>
+                        <div class="text-warning mb-2">
+                          <i class="bi bi-star-fill"></i>
+                          <i class="bi bi-star-fill"></i>
+                          <i class="bi bi-star-fill"></i>
+                          <i class="bi bi-star-fill"></i>
+                          <i class="bi bi-star-fill"></i>
+                        </div>
+                        <p class="small mb-0">
+                          “Fotokopinya rapi, nggak perlu nunggu lama. Sekalian
+                          bisa beli alat tulis juga, jadi praktis banget.”
+                        </p>
+                      </div>
+                      <div
+                        class="d-flex align-items-center gap-3 mt-4 pt-4 border-top"
+                      >
+                        <div class="testi-avatar">
+                          <img src="gambar/omseok.png" alt="Sarjui Pausan" />
+                        </div>
+                        <div>
+                          <h4 class="h6 mb-0">Boo Seok</h4>
+                          <span class="small text-secondary">Korea Utara</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-4">
+                    <div class="testi-card">
+                      <div>
+                        <div class="text-warning mb-2">
+                          <i class="bi bi-star-fill"></i>
+                          <i class="bi bi-star-fill"></i>
+                          <i class="bi bi-star-fill"></i>
+                          <i class="bi bi-star-fill"></i>
+                          <i class="bi bi-star-fill"></i>
+                        </div>
+                        <p class="small mb-0">
+                          “Tempatnya cocok banget buat kebutuhan anak sekolah.
+                          Mau fotokopi, print, sampai cari alat tulis semuanya
+                          ada.”
+                        </p>
+                      </div>
+                      <div
+                        class="d-flex align-items-center gap-3 mt-4 pt-4 border-top"
+                      >
+                        <div class="testi-avatar">
+                          <img src="gambar/mbaksong.jpg" alt="Sarjui Pausan" />
+                        </div>
+                        <div>
+                          <h4 class="h6 mb-0">Song Hye Kyo</h4>
+                          <span class="small text-secondary"
+                            >Amerika Serikat</span
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- GALERI -->
+      <section id="galeri" class="galeri-section">
+        <div class="container">
+          <div class="galeri-heading text-center">
+            <span>#COPIFY</span>
+            <h2>Momen Seru Di Instagram</h2>
+            <p>Intip Berbagai Momen Dan Keseruan Bersama Copify</p>
+          </div>
+          <div class="galeri-grid">
+            <a href="" class="instagram-card">
+              <img src="gambar/galeri1.png" alt="" />
+            </a>
+            <a href="" class="instagram-card">
+              <img src="gambar/galeri2.png" alt="" />
+            </a>
+            <a href="" class="instagram-card">
+              <img src="gambar/galeri3.png" alt="" />
+            </a>
+            <a href="" class="instagram-card">
+              <img src="gambar/galeri4.png" alt="" />
+            </a>
+          </div>
+          <div class="text-center mt-4">
+            <a href="" class="btn-instagram">
+              <i class="bi bi instagram"></i>
+              Lihat Instagram #COPIFY
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
